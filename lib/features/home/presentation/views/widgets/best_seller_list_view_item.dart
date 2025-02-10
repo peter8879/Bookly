@@ -28,8 +28,9 @@ class BestSellerListViewItem extends StatelessWidget {
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children:  [
                   SizedBox(
+                    width: MediaQuery.of(context).size.width*0.5,
                     child: Padding(
-                      padding: EdgeInsetsDirectional.only(top: 10.0),
+                      padding: const EdgeInsetsDirectional.only(top: 10.0),
                       child: Text(
                         book.volumeInfo.title!,
                         style: Styles.textStyle20.copyWith(
@@ -39,7 +40,6 @@ class BestSellerListViewItem extends StatelessWidget {
                         maxLines: 2,
                       ),
                     ),
-                    width: MediaQuery.of(context).size.width*0.5,
                   ),
                   const SizedBox(height: 3,),
                   FittedBox(

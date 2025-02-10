@@ -25,7 +25,7 @@ class SimilarBoxListView extends StatelessWidget {
                   onTap: (){
                     GoRouter.of(context).push(AppRouter.kBookDetailsView,extra: SimilarBooksCubit.get(context).similarBooks[index]);
                   },
-                    child: BookItem(image:SimilarBooksCubit.get(context).similarBooks[index].volumeInfo.imageLinks!.thumbnail ,)
+                    child: BookItem(image:SimilarBooksCubit.get(context).similarBooks[index].volumeInfo.imageLinks!=null?SimilarBooksCubit.get(context).similarBooks[index].volumeInfo.imageLinks!.thumbnail:'https://purepng.com/public/uploads/large/purepng.com-booksbookillustratedwrittenprintedliteratureclipart-1421526451707uyace.png' ,)
                 ),
                 itemCount:SimilarBooksCubit.get(context).similarBooks.length,
                 separatorBuilder: (context,index)=> const SizedBox(width: 8.0,),

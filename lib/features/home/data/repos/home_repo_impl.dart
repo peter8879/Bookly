@@ -68,7 +68,7 @@ HomeRepoImpl(this.dioHelper);
     
     try{
       List<BookModel>books=[];
-      var data= await dioHelper.get(url: 'volumes?Filtering=free-ebooks&Sorting=relevance&q=subject:programming');
+      var data= await dioHelper.get(url: 'volumes?Filtering=free-ebooks&Sorting=relevance&q=subject:$subject');
       for(var item in data['items'])
         {
           books.add(BookModel.fromJson(item));

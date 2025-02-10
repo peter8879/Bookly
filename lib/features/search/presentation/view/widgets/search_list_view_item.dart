@@ -15,7 +15,7 @@ class SearchListViewItem extends StatelessWidget {
 
             height: MediaQuery.of(context).size.height*0.17,
 
-            child:  BookItem(image: book.volumeInfo.imageLinks!.thumbnail,),
+            child:  BookItem(image: book.volumeInfo.imageLinks!=null?book.volumeInfo.imageLinks!.thumbnail:'https://purepng.com/public/uploads/large/purepng.com-booksbookillustratedwrittenprintedliteratureclipart-1421526451707uyace.png',),
         ),
         const SizedBox(
           width: 10.0,
@@ -23,11 +23,14 @@ class SearchListViewItem extends StatelessWidget {
         Expanded(
           child: Padding(
             padding: const EdgeInsets.symmetric(horizontal: 12),
-            child: Text(
-              book.volumeInfo.title!,
-              style: Styles.textStyle18,
-              maxLines: 2,
-              overflow: TextOverflow.ellipsis,
+            child: FittedBox(
+              fit: BoxFit.scaleDown,
+              child: Text(
+                book.volumeInfo.title!,
+                style: Styles.textStyle18,
+                maxLines: 2,
+                overflow: TextOverflow.ellipsis,
+              ),
             ),
           ),
         )

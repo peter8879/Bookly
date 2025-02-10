@@ -27,7 +27,7 @@ class _CustomSearchTextFieldState extends State<CustomSearchTextField> {
           ),
           borderRadius: BorderRadius.circular(12),
         ),
-        hintText: 'Type Book Name To search',
+        hintText: 'Type Book Name To Search',
         suffixIcon: IconButton(
           icon:  Icon(FontAwesomeIcons.magnifyingGlass,size: 22,
             color: Colors.white.withOpacity(0.8),),

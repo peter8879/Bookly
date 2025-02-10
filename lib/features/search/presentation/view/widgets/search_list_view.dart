@@ -26,7 +26,6 @@ class SearchListView extends StatelessWidget {
        else
          {
            return ListView.separated(
-             shrinkWrap: true,
              physics: const NeverScrollableScrollPhysics(),
              padding: EdgeInsets.zero,
              itemBuilder: (context,index)=> InkWell(

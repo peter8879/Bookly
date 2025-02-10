@@ -14,7 +14,7 @@ class SearchViewBody extends StatelessWidget {
       slivers: [
         SliverToBoxAdapter(
           child: Padding(
-            padding:   const EdgeInsets.symmetric(horizontal: 30.0),
+            padding:   const EdgeInsets.symmetric(horizontal: 30.0,vertical: 20.0),
             child: Column(
               children: [
                 CustomSearchTextField(),
@@ -26,7 +26,7 @@ class SearchViewBody extends StatelessWidget {
             ),
           ),
         ),
-        const SliverToBoxAdapter(
+        const SliverFillRemaining(
           child: SearchListView(),
         )
       ],

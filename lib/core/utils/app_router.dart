@@ -11,6 +11,9 @@ import 'package:bookly/features/search/presentation/view/search_view.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:go_router/go_router.dart';
 
+import '../../features/home/data/repos/home_repo.dart';
+import '../../features/search/data/repos/search_repo.dart';
+
 abstract class AppRouter
 {
   static const kHomeView='/homeView';
@@ -29,7 +32,7 @@ abstract class AppRouter
       GoRoute(
         path: kBookDetailsView,
         builder: (context, state) => BlocProvider(
-          create: (context)=>SimilarBooksCubit(getIt.get<HomeRepoImpl>()),
+          create: (context)=>SimilarBooksCubit(getIt.get<HomeRepo>()),
           child:  BookDetailsView(
             book:state.extra as BookModel
           ),
@@ -38,7 +41,7 @@ abstract class AppRouter
       GoRoute(
         path: kSearchView,
         builder: (context, state) => BlocProvider(
-            create: (context)=>SearchCubit(getIt.get<SearchRepoImpel>()),
+            create: (context)=>SearchCubit(getIt.get<SearchRepo>()),
           child: const SearchView(),
         ),
       ),
